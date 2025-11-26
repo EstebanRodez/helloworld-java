@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-java@v5.0.0
         with:
           java-version: 25
-          distribution: microsoft
+          distribution: zulu
       - name: Construction du package jar
         run: mvn clean package -DskipTests
 
