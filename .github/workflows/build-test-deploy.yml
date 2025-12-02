@@ -39,6 +39,11 @@ jobs:
         with:
           java-version: 17
           distribution: zulu
+      - name: Cache des dépendances Maven
+        uses: actions/cache@v4.3.0
+        with:
+          path: ${{github.workspace}}/.m2/repository
+          key: cache dependances
       - name: "Lancement des tests"
         run: "mvn test"
       
