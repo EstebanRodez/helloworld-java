@@ -47,7 +47,7 @@ jobs:
           key: cache dependances
       - name: "Lancement des tests"
         run: "mvn test"
-      - name: Construire l'artifcact
+      - name: Construire l'artifact
         uses: actions/download-artifact@v5
         with: 
           name: helloworld-${{env.PROJET_VERSION}}.jar
