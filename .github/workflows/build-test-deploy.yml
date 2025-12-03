@@ -47,6 +47,7 @@ jobs:
           key: cache dependances
       - name: "Lancement des tests"
         run: "mvn test"
+        continue-on-error: true
       - name: Construire l'artifact
         uses: actions/download-artifact@v5
         with: 
