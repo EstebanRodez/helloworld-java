@@ -28,7 +28,7 @@ jobs:
       - name: Construction du package jar
         run: mvn clean package -DskipTests
       - name: Construire l'artifact
-        uses: actions/download-artifact@v5
+        uses: actions/upload-artifact@v5
         with: 
           name: helloworld-${{env.PROJET_VERSION}}.jar
           path: target/helloworld-1.0-SNAPSHOT.jar
