@@ -46,7 +46,7 @@ jobs:
           path: ${{github.workspace}}/.m2/repository
           key: cache dependances
       - name: "Lancement des tests"
-        run: "mvn test"
+        run: mvn test package
         continue-on-error: true
       - name: Construire l'artifact
         uses: actions/download-artifact@v5
