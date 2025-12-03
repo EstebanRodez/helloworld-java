@@ -53,5 +53,18 @@ jobs:
       - name: "Lancement des tests"
         run: mvn test package
         continue-on-error: true
+
+  deploy:
+    name: Déployer l'application
+    runs-on: ubuntu-latest
+    needs: tests
+    steps:
+      - name: Télécharger l'artifact
+        uses: actions/download-artifact@v6.0.0
+        with:
+          name: helloworld-${{env.PROJET_VERSION}}.jar
+      - name: Déployer vers le serveur
+        run: echo "Déploiement de l'application"
+      
           
       
